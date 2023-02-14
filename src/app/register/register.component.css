@@ -1,0 +1,18 @@
+
+.container{
+    border:none;
+    padding:40px;
+    margin-top: 5%;
+    position: absolute;
+    top:50%;
+    left:55%;
+    max-width: 500px;
+    transform: translate(-50%,-50%);
+}
+.sec{
+    margin-top: 7px;
+    margin-bottom: 5px;
+}
+.abc{
+    margin-top: 5px;
+}

@@ -1,0 +1,16 @@
+<div class="container ">
+    <div class="heading">
+        <h4>Select Your Subject</h4>
+    </div>
+
+    <div class="allTopics">
+        <select [(ngModel)]="selectedSubject">
+            <option *ngFor="let subject of subjects;let indexOfsubject=index" [value]="indexOfsubject">{{subject}}
+            </option>
+        </select>
+
+    </div>
+    <!-- <p>Selected subject: {{selectedSubject}}</p> -->
+    <button class="btn btn-primary" (click)="goToQuiz()">Start Your Quiz</button>
+
+</div>

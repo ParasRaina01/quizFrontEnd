@@ -1,0 +1,9 @@
+.container{
+    margin-top: 100px;
+    width: 60%;
+    height: 60%;
+    background-color: rgb(126, 160, 160);
+    padding-top: 150px;
+    vertical-align: center;
+    border-radius: 4%;
+}
