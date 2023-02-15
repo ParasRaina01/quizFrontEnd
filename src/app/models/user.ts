@@ -1,4 +1,10 @@
 export class User{
-    fullName:string;
+    userName:string;
+    userEmail: string;
+    userPhoneNumber;
+    userPassword;
+    answer;
+    dob;
+    
     
 }

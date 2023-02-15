@@ -11,16 +11,19 @@ import { FormBuilder,FormControl,FormArray,Validators,FormGroup } from '@angular
 })
 export class ResetPasswordComponent implements OnInit{
   newPassword = '';
+  flag = false;
+  noMatching = null;
   resetPasswordForm: FormGroup;
   constructor(
     private router: Router,
     private http: HttpClient) { }
-  questions: any = ['first pet name', 'favourite teacher name', 'favourite icecream flavour'];
+  questions = ['first pet name', 'favourite teacher name', 'favourite icecream flavour'];
   ngOnInit() {
     this.resetPasswordForm = new FormGroup({
       'userEmail': new FormControl('', [Validators.required, Validators.email]),
+      'question': new FormControl('',Validators.required),
       'answer': new FormControl('',Validators.required),
-      'newPassword': new FormControl('',[Validators.required,Validators.minLength(8)])
+      'newPassword': new FormControl('',[Validators.required,Validators.minLength(6)])
     });
   }
   onResetPassword(){

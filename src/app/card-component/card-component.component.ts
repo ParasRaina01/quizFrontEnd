@@ -60,7 +60,8 @@ export class CardComponentComponent implements OnInit {
 
     if (this.counter === 9) {
       // alert("Are you sure you want to add: \n" +this.redirURL + "?");
-      this.router.navigate(['/greet']);
+      this.router.navigate(['/greeting']);
+
     }
 
     if (this.counter === 8) {

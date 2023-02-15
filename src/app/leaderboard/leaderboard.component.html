@@ -6,8 +6,8 @@
     <mat-form-field (click)="Topics()" appearance="fill"><mat-label>Select a Course</mat-label>
       <mat-select  (selectionChange)="chooseCourse($event)"  [(value)]="selected">
         <!-- <mat-option>None</mat-option> -->
-        <mat-option *ngFor="let option of alltopics" [value]="option.id">
-          {{option.id}}
+        <mat-option *ngFor="let option of alltopics" [value]="option.topicId">
+          {{option.topicName}}
         </mat-option>
         <!-- <mat-option value="angular">Angular</mat-option>
         <mat-option value="java"   >Java   </mat-option>
@@ -28,7 +28,7 @@
 
 <!-- <p >You selected: {{selected}}</p> -->
 <div class="container" *ngIf="selected==='' else elseTemplate">
-  <img src="../assets/leaderboard.jpg" alt="rank.jpg" style="justify-content: center;">
+  <img src="../../assets/rank.png" alt="rank.png" style="justify-content: center;">
 
 </div>
 <ng-template #elseTemplate>

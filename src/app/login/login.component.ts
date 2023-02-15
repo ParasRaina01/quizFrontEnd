@@ -18,14 +18,10 @@ export class LoginComponent implements OnInit{
     private http:HttpClient){
 
   }
-  auth_cookie = null;
+  auth_token = null;
   badCredentials = false;
-  getLoggedInUser(auth_token): Observable<any> {
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${auth_token}`
-    })
-    return this.http.get('', { headers: headers })
-  }
+  flag = true;
+  loginValid = true;
 
   ngOnInit(){
     this.loginForm = new FormGroup({
@@ -43,12 +39,14 @@ export class LoginComponent implements OnInit{
         if(result){
           this.router.navigate(['/choosesubject']);   
           sessionStorage.setItem('Auth_token',JSON.stringify(result));
-          this.auth_cookie = sessionStorage.getItem('Auth_token');
+          this.auth_token = sessionStorage.getItem('Auth_token');
+          this.loginValid = true;
           
         }
       },
       error=>{
         console.error();
+        this.loginValid = false;
         this.badCredentials = true;
       })
   }
