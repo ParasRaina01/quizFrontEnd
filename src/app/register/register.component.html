@@ -1,0 +1,89 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <h4 class="res">Create a new account</h4>
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="userName">Full Name:</label>
+                <input type="text" id="userName" formControlName="userName"
+                class="form-control">
+                <span class="help-block"
+              *ngIf="!registrationForm.get('userName').valid && registrationForm.get('userName').touched"
+              >Please enter a valid name!</span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" formControlName="userEmail"
+              class="form-control" placeholder="">
+              <span class="help-block"
+              *ngIf="!registrationForm.get('userEmail').valid && registrationForm.get('userEmail').touched"
+              >Please enter a valid email!</span>
+            </div>
+            <div class="form-group">
+              <label for="mobileNumber">Mobile Number:</label>
+              <input type="text" id="mobileNumber" formControlName="userPhoneNo"
+              class="form-control">
+              <span class="help-block"
+              *ngIf="!registrationForm.get('userPhoneNo').valid && registrationForm.get('userPhoneNo').touched"
+              >Please enter your Moblie Number!</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Enter Password:</label>
+                <input type="password"
+                class="form-control"
+                formControlName="userPassword" minlength="8">
+                <span class="help-block"
+              *ngIf="!registrationForm.get('userPassword').valid && 
+              !registrationForm.get('userPassword').touched
+              ">
+              Please enter a valid password
+            </span>
+            </div>
+            <!-- <div class="form-group">
+              <label for="confirmPassword">Confirm Password:</label>
+              <input type="password"
+              class="form-control"
+              formControlName="confirmPassword">
+              <span class="help-block" 
+              *ngIf="registrationForm.get('confirmPassword').touched &&
+              registrationForm.get('userPassword').touched ">
+                <span class="help-block"
+            *ngIf="registrationForm.get('confirmPassword').value !== 
+            registrationForm.get('userPassword').value"
+            >Passwords do not match</span>
+              </span>
+          </div> -->
+            <div class="form-group">
+              <label for="birthdate">Enter DOB:</label>
+              <input type="date" id="birthday"
+              formControlName="dob"
+              class="form-control" required>
+            </div>
+            <div class="form-group">
+                <select class="sec" formControlName="question">
+                  <option value="" class="form-control ">Choose a security question</option>
+                  <option *ngFor="let Question of questions">{{Question}}</option>
+                </select>
+              <input type="text" id="answer"
+              formControlName="answer"
+              class="form-control">
+            </div>
+            <button [disabled]="!registrationForm.valid" type="submit" class="btn btn-primary abc" >Register</button>
+            <div class="text-center">
+                <p>Already have an account <a [routerLink]="['/login']">Login</a></p>
+            </div>
+          </form> 
+    </div>
+    
+</div>
+</div>
+
+
+
+
+
+  
+  
+  
+  

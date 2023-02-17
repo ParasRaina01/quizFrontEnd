@@ -1,0 +1,30 @@
+<div class="container ">
+    <div class="heading">
+        <h4>Select Your Subject</h4>
+    </div>
+
+    <div class="allTopics">
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>Favorite Subject </mat-label>
+                <mat-select [(ngModel)]="selectedSubject" name="food">
+                    <mat-option *ngFor="let subject of topics" [value]="subject.topicId">{{subject.topicName}}
+
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </div>
+
+    
+        <!-- 
+        <select [(ngModel)]="selectedSubject">
+            <option *ngFor="let subject of topics" [value]="subject.topicId">{{subject.topicName}}
+            </option>
+        </select> -->
+
+    
+    <!-- <p>Selected subject: {{selectedSubject}}</p> -->
+    <button class="btn btn-primary" (click)="goToQuiz()">Start Your Quiz</button>
+
+</div>
